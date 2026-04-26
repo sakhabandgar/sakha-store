@@ -1,0 +1,12 @@
+product,related_product,image,price
+Laptop,Mouse,laptop.jpg,60000
+Laptop,Keyboard,laptop.jpg,60000
+Laptop,Laptop Charger,laptop.jpg,60000
+Phone,Earphone,phone.jpg,20000
+Phone,Charger,phone.jpg,20000
+Keyboard,Mouse,keyboard.jpg,1500
+Mouse,Keyboard,mouse.jpg,800
+Earphone,Phone,earphone.jpg,700
+Charger,Phone,charger.jpg,900
+Laptop Charger,Laptop,laptopcharger.jpg,1200
+Laptop Bag,Laptop,laptopbag.jpg,1200

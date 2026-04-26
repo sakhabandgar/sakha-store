@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Store</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <a href="/" class="logo">SAKHA STORE</a>
+
+  <input type="text" id="search" placeholder="Search products...">
+
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/cart">Cart</a>
+  </div>
+
+</div>
+
+<!-- PRODUCTS -->
+<div class="grid" id="productGrid">
+
+{% for p in products %}
+  <div class="card">
+    <a href="/product/{{p.product}}">
+      <img src="/static/images/{{p.image}}">
+      <h3>{{p.product}}</h3>
+    </a>
+  </div>
+{% endfor %}
+
+</div>
+
+<!-- SEARCH SCRIPT -->
+<script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("input", function () {
+  let value = this.value.toLowerCase();
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(value) ? "block" : "none";
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <a href="/" class="logo">SAKHA STORE</a>
+
+  <input type="text" placeholder="Search products..." disabled>
+
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/cart">Cart</a>
+  </div>
+
+</div>
+
+<!-- MAIN PRODUCT -->
+<div class="box">
+  <img src="/static/images/{{product.image}}">
+  <h2>{{product.product}}</h2>
+  <h3>₹{{product.price}}</h3>
+
+  <a href="/add/{{product.product}}">
+    <button>Add to Cart</button>
+  </a>
+</div>
+
+<!-- RELATED PRODUCTS -->
+<h2 style="text-align:center;">Related Products</h2>
+
+<div class="grid">
+
+{% for r in related %}
+  <div class="related-card">
+
+    <!-- CLICKABLE IMAGE -->
+    <a href="/product/{{r.product}}">
+      <img src="/static/images/{{r.image}}">
+    </a>
+
+    <h4>{{r.product}}</h4>
+    <p>₹{{r.price}}</p>
+
+  </div>
+{% endfor %}
+
+</div>
+
+</body>
+</html>

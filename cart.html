@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <a href="/" class="logo">SAKHA STORE</a>
+
+  <input type="text" placeholder="Search products..." disabled>
+
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/cart">Cart</a>
+  </div>
+
+</div>
+
+<!-- CART ITEMS -->
+<h2 style="text-align:center;">Your Cart</h2>
+
+{% for item in cart %}
+<div class="cart-item">
+
+  <img src="/static/images/{{item.image}}" width="60">
+
+  <div>
+    <h3>{{item.product}}</h3>
+    <p>₹{{item.price}}</p>
+  </div>
+
+  <a href="/remove/{{item.product}}">
+    <button>Remove</button>
+  </a>
+
+</div>
+{% endfor %}
+
+<h2 style="text-align:center;">Total: ₹{{total}}</h2>
+
+<div style="text-align:center;">
+  <button>Checkout</button>
+</div>
+
+</body>
+</html>
